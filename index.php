@@ -310,7 +310,9 @@
             <div class="unit-name">
                 කළමනාකරණ සංවර්ධන හා පුහුණු ඒකකය
             </div>
-
+        <div class="unit-name">
+               වයඹ ප්‍රධාලේකම් කාර්යාලය
+            </div>
             <div class="language-section">
 
 
