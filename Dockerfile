@@ -1,5 +1,8 @@
-FROM nginxinc/nginx-unprivileged:stable-alpine
+FROM registry.access.redhat.com/ubi9/httpd-24
 
-COPY . /usr/share/nginx/html
+COPY . /var/www/html/
 
 EXPOSE 8080
+
+
+
