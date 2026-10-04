@@ -6,10 +6,15 @@ $username = "mdtunwgo_dbuser";
 $password = "LsHnaTiuBg2Ih1A&";
 $dbname = "mdtunwgo_mdtu";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Variable එක $con ලෙස සාදන්න
+$con = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Database Connection Failed: " . $conn->connect_error);
+if ($con->connect_error) {
+    die("Database Connection Failed: " . $con->connect_error);
 }
-	$conn->set_charset("utf8");
+
+// compatibility එක සඳහා $conn එකටද assign කරමු
+$conn = $con;
+
+$con->set_charset("utf8");
 ?>
