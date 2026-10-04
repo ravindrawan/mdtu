@@ -1,0 +1,3 @@
+[15-May-2024 00:21:25 America/New_York] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mdtunwgo/public_html/db.php:28) in /home/mdtunwgo/public_html/logout.php on line 2
+[17-Nov-2024 12:47:38 America/New_York] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mdtunwgo/public_html/db.php:28) in /home/mdtunwgo/public_html/logout.php on line 2
+[19-Nov-2024 07:02:36 America/New_York] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/mdtunwgo/public_html/printpvttrainingsapp.php on line 154

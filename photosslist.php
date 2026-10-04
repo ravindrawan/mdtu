@@ -1,0 +1,89 @@
+<?Php
+
+	include "db.php"; // call the database connection
+
+	$sql="SELECT * FROM cp_downloads where dwn_type='ඡායාරූප' order by dwn_date,dwn_type DESC";
+	$rs=mysqli_query($con,$sql);
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/tabls.css" rel="stylesheet" type="text/css" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div style="font-size:20px;font-weight:700;background-color:#000;color:#FFF;height:30px;padding-top:5px;padding-left:5px">ඡායාරූප</div><br />
+<table width="100%" border="1" class="zebra">
+	<?php
+		$number=1;
+		$numberofRows= mysqli_num_rows($rs);
+		if($numberofRows !=0){
+			while($rows=mysqli_fetch_assoc($rs)){
+?>
+  <tr align="center">
+
+    <td>
+    <a href="uploads/<?Php echo $rows["dwn_file"]; ?>" target="new">
+    <img src="uploads/<?Php echo $rows["dwn_file"]; ?>" width="200" /></a>
+    </td>
+    <td>
+    <a href="uploads/<?Php echo $rows["dwn_file2"]; ?>" target="new"><img src="uploads/<?Php echo $rows["dwn_file2"]; ?>" width="200" /></a>
+    </td>
+    <td>
+    <a href="uploads/<?Php echo $rows["dwn_file3"]; ?>" target="new"><img src="uploads/<?Php echo $rows["dwn_file3"]; ?>" width="200" /></a>
+    </td>
+    <td>
+    <a href="uploads/<?Php echo $rows["dwn_file4"]; ?>" target="new"><img src="uploads/<?Php echo $rows["dwn_file4"]; ?>" width="200" /></a>
+    </td>
+
+  </tr>
+  <tr align="center">
+
+    <td>
+    <a href="uploads/<?Php echo $rows["dwn_file"]; ?>" target="new"><?Php echo $rows["dwn_des"]; ?></a>
+    </td>
+    <td>
+    <a href="uploads/<?Php echo $rows["dwn_file2"]; ?>" target="new"><?Php echo $rows["dwn_des"]; ?></a>
+    </td>
+    <td>
+    <a href="uploads/<?Php echo $rows["dwn_file3"]; ?>" target="new"><?Php echo $rows["dwn_des"]; ?></a>
+    </td>
+    <td>
+    <a href="uploads/<?Php echo $rows["dwn_file4"]; ?>" target="new"><?Php echo $rows["dwn_des"]; ?></a>
+    </td>
+
+  </tr>
+
+<?Php
+	$number=$number+1;
+			}
+		}
+		else{
+?>
+  <tr>
+    <td colspan="8" style="font-size:18px;font-weight:700" align="center">තොරතුරු කිසිවක් නොමැත...!</td>
+  </tr>
+<?Php
+		}
+		$con->close();
+?>
+</table>
+    	<!--<table width="100%"><tr><td width="80%"></td><td style="padding-left:5px;background-color:#000;font-size:16px" align="center" id="menulink" height="25px" width="20%">    <?Php
+	if($_SESSION['logtype']=="Administrator"){
+	?>
+    <a href="control.php">පාලන පුවරුව</a>
+    <?Php
+	}
+	else{
+	?>
+    <a href="usercontrolpanel.php">පාලන පුවරුව</a>
+	<?Php
+	}
+	?>    
+</td></tr></table>-->
+
+</body>
+</html>
