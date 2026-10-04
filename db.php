@@ -1,38 +1,30 @@
 <?php
-	//Set the connection to the mdtu database
-//	$con = mysql_connect("localhost","leavemdtu","lmd@123") or die ("දත්ත ගබඩාව හා සම්බන්ධ විය නොහැක : ".mysql_error());
-//	mysql_select_db("mdtu_leave",$con);
+// $servername = "localhost";
+// $username = "mdtunwgo_dbuser";
+// $password = "LsHnaTiuBg2Ih1A&";
+// $dbname = "mdtunwgo_mdtu";
 
-//	$con = mysql_connect("localhost","root","") or die ("Could not connect to the Database : ".mysql_error());
-//	mysql_select_db("mdtu_leave",$con);
+// $con = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+// if ($con->connect_error) {
+//     die("Connection failed: " . $con->connect_error);
+// } 
+// $con->set_charset("utf8");
 
+// OpenShift MySQL Service Name එක
+$servername = "mysql"; 
 
-//$servername = "localhost";
-//$username = "mdtunwgo_dbuser";
-
-$servername = "localhost";
-$username = "mdtunwgo_dbuser";
-$password = "LsHnaTiuBg2Ih1A&";
+// OpenShift MySQL Database එක හදන විට ඔබ ලබා දුන් Credentials
+$username = "mdtunwgo_dbuser"; 
+$password = "LsHnaTiuBg2Ih1A&"; 
 $dbname = "mdtunwgo_mdtu";
 
+// Connection එක සාදා ගැනීම
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-
-
-//$username = "root";
-//$username = "cpmdtudb";
-//$password = "Bcsrg#4ma%tD";
-//$password = "";
-//$password = "CpMdtu@79";
-//$dbname = "mdtunwgo_mdtu";
-//$dbname = "nwmdtu";
-// Create connection
-$con = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-} 
-
-// Set UTF-8 charset for Sinhala Unicode text
-$con->set_charset("utf8");
+// Connection එක පරීක්ෂා කිරීම
+if ($conn->connect_error) {
+    die("Database Connection Failed: " . $conn->connect_error);
+}
+	$conn->set_charset("utf8");
 ?>
-
